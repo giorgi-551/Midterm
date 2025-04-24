@@ -1,32 +1,44 @@
-# Virtual Animal Shelter Management System  
-## Masterclass in Java  
-### Giorgi Maisuradze  
+# Virtual Animal Shelter Management
+### Masterclass in Java
+**Giorgi Maisuradze**  
 Doctor of Informatics, Associate Professor at Ilia State University  
-giorgi@gmail.com 
+giorgi@gmail.com,
 
-Create Virtual Animal Shelter Management System (VASMS) in Java. VASMS is widely used software. It can be any complexity. Our example is a basic one, which has the following features:
-1. Storage for animals
-2. Ability to add an animal to the shelter
-3. Ability to remove an animal from the shelter
-4. Ability to print the shelter animal information on the console
+Create Virtual Animal Shelter Management (VASM) in Java. VASM is widely used software in shelters and animal rescue centers. It can be of any complexity. Our example is a basic one, which has the following features:  
+1. Storage for animals  
+2. Ability to add animals to the shelter  
+3. Ability to remove animals from the shelter  
+4. Ability to print the shelter animal information on the console  
 
-### VASMS Structure
-We will need the following classes for the software:
-1. **Animal** – the animal itself.
-2. **VASMS** – the animal shelter management system.
-3. **ShelterTester** – the tester class. This class will be used to test our management system.
+## VASM Structure
+We will need the following classes for the software:  
+1. Animal – represents the animal itself.  
+2. Shelter – manages the animal shelter.  
+3. ShelterTester – the tester class. This class will be used to test our management system.
+
+### Class: Animal
+- `String name`  
+- `String type`  
+- `int age`  
+
+### Class: Shelter  
+- `List<Animal> storage`  
+- `void addAnimal(Animal animal)`  
+- `boolean removeAnimal(Animal animal)`  
+- `void printStorage()`  
 
 ---
 
-### Class Animal
+## Class: Animal  
+Package: shelter  
 
-The `Animal` class should have several fields, including name and species. This class can be implemented in the following way:
+The class `Animal` should have several fields, including name, type (species), and age. This class can be implemented in the following way:
 
 ```java
-package shelter;
-
 public class Animal {
-    private String name, species;
+    private String name;
+    private String type;
+    private int age;
 
     public String getName() {
         return name;
@@ -36,16 +48,19 @@ public class Animal {
         this.name = name;
     }
 
-    public String getSpecies() {
-        return species;
+    public String getType() {
+        return type;
     }
 
-    public void setSpecies(String species) {
-        this.species = species;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    @Override
-    public String toString() {
-        return species + ": " + name;
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
